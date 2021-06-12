@@ -6,6 +6,7 @@ const App = () => {
     <View
       style={[
         styles.container,
+
         {
           // Try setting `flexDirection` to `"row"`.
           flexDirection: 'row',
