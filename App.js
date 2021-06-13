@@ -1,17 +1,31 @@
-import React from 'react';
-import {View, Text, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {ActivityIndicator, FlatList, Text, View} from 'react-native';
 
 const App = () => {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch('https://reactnative.dev/movies.json')
+      .then(response => response.json())
+      .then(json => setData(json.movies))
+      .catch(error => console.error(error))
+      .finally(() => setLoading(false));
+  }, []);
   return (
-    <View>
-      <Text>img here</Text>
-      {/* <Image source={require('./img/2.jpg')} /> */}
-
-      {/* <Image
-        source={{uri: 'https://reactjs.org/logo-og.png'}}
-        style={{width: 400, height: 400}}
-
-      /> */}
+    <View style={{flex: 1, padding: 24}}>
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : (
+        <FlatList
+          data={data}
+          keyExtractor={({id}, index) => id}
+          renderItem={({item}) => (
+            <Text>
+              {item.title}, {item.releaseYear}
+            </Text>
+          )}
+        />
+      )}
     </View>
   );
 };
