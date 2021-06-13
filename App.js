@@ -21,7 +21,7 @@ const App = () => {
           keyExtractor={({id}, index) => id}
           renderItem={({item}) => (
             <Text>
-              {item.title}, {item.releaseYear}
+              {item.title}, {item.releaseYear},
             </Text>
           )}
         />
