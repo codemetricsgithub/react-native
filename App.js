@@ -1,17 +1,42 @@
-import React, {useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import React from 'react';
+import {useCallback, useRef} from 'react';
+import {
+  StyleSheet,
+  TextInput,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 const App = () => {
-  const [buttonOpacity, setButtonOpacity] = useState(1);
+  const inputRef = useRef();
+  const clearText = useCallback(() => {
+    inputRef.current.setNativeProps({text: ''});
+  }, []);
+
   return (
-    <TouchableOpacity
-      onPressIn={() => setButtonOpacity(0.5)}
-      onPressOut={() => setButtonOpacity(1)}>
-      <View style={{opacity: buttonOpacity}}>
-        <Text>Press me!</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <TextInput ref={inputRef} style={styles.input} />
+      <TouchableOpacity onPress={clearText}>
+        <Text>Clear text</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  input: {
+    height: 50,
+    width: 200,
+    marginHorizontal: 20,
+    borderWidth: 1,
+    borderColor: '#ccc',
+  },
+});
 
 export default App;
