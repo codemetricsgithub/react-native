@@ -1,34 +1,17 @@
-import React, {useState} from 'react';
-import {Text, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
+import Header from './components/Header';
+import Body from './components/Body';
+import Footer from './components/Footer';
 
 const App = () => {
-  const [titleText, setTitleText] = useState("Bird's Nest");
-  const bodyText = useState('This is not really a bird nest.');
-
-  const onPressTitle = () => {
-    setTitleText("Bird's Nest [pressed]");
-  };
-
   return (
-    <Text style={styles.baseText}>
-      <Text style={styles.titleText} onPress={onPressTitle}>
-        {titleText}
-        {'\n'}
-        {'\n'}
-      </Text>
-      <Text numberOfLines={5}>{bodyText}</Text>
-    </Text>
+    <View>
+      <Header />
+      <Body />
+      <Footer />
+    </View>
   );
 };
-
-const styles = StyleSheet.create({
-  baseText: {
-    fontFamily: 'Cochin',
-  },
-  titleText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-});
 
 export default App;
