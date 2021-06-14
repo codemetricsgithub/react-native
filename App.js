@@ -1,32 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, TouchableOpacity} from 'react-native';
 
 const App = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch('https://reactnative.dev/movies.json')
-      .then(response => response.json())
-      .then(json => setData(json.movies))
-      .catch(error => console.error(error))
-      .finally(() => setLoading(false));
-  }, []);
+  const [buttonOpacity, setButtonOpacity] = useState(1);
   return (
-    <View style={{flex: 1, padding: 24}}>
-      {isLoading ? (
-        <ActivityIndicator />
-      ) : (
-        <FlatList
-          data={data}
-          keyExtractor={({id}, index) => id}
-          renderItem={({item}) => (
-            <Text>
-              {item.title}, {item.releaseYear},
-            </Text>
-          )}
-        />
-      )}
-    </View>
+    <TouchableOpacity
+      onPressIn={() => setButtonOpacity(0.5)}
+      onPressOut={() => setButtonOpacity(1)}>
+      <View style={{opacity: buttonOpacity}}>
+        <Text>Press me!</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
