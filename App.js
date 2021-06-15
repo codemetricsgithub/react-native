@@ -1,17 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import Header from './components/Header';
-import Body from './components/Body';
-import Footer from './components/Footer';
+import Scrollviews from './src/pages/Scrollviews';
 
 const App = () => {
-  return (
-    <View>
-      <Header />
-      <Body />
-      <Footer />
-    </View>
-  );
+  return <Scrollviews />;
 };
 
 export default App;
