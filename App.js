@@ -1,13 +1,14 @@
 import React from 'react';
 import Scrollviews from './src/pages/Scrollviews';
-import {View, Text} from 'react-native';
-import Stylesheet from './src/pages/Stylesheet';
+import StylesheetCompose from './src/stylesheets/StylesheetCompose';
+import StylesheetFlatten from './src/stylesheets/StylesheetFlatten';
 
 const App = () => {
   return (
     <>
       <Scrollviews />
-      <Stylesheet />
+      <StylesheetCompose />
+      <StylesheetFlatten />
     </>
   );
 };
