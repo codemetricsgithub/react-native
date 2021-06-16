@@ -6,8 +6,8 @@ import Stylesheet from './src/pages/Stylesheet';
 const App = () => {
   return (
     <>
-      <Stylesheet />
       <Scrollviews />
+      <Stylesheet />
     </>
   );
 };

@@ -2,29 +2,35 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 const Stylesheet = () => (
-  <View style={styles.container}>
-    <Text style={styles.title}>React Native</Text>
+  <View style={container}>
+    <Text style={text}>React Native</Text>
   </View>
 );
 
-const styles = StyleSheet.create({
+const page = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 0,
     padding: 24,
-    backgroundColor: '#eaeaea',
+    backgroundColor: '#fff',
   },
-  title: {
-    marginTop: 16,
-    paddingVertical: 8,
-    borderWidth: 8,
-    borderColor: '#20232a',
-    borderRadius: 60,
-    backgroundColor: '#61dafb',
-    color: '#20232a',
-    textAlign: 'center',
+  text: {
     fontSize: 30,
+    color: '#000',
+  },
+});
+
+const lists = StyleSheet.create({
+  listContainer: {
+    flex: 1,
+    backgroundColor: '#61dafb',
+  },
+  listItem: {
+    fontStyle: 'italic',
     fontWeight: 'bold',
   },
 });
+
+const container = StyleSheet.compose(page.container, lists.listContainer);
+const text = StyleSheet.compose(page.text, lists.listItem);
 
 export default Stylesheet;
