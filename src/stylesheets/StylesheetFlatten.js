@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const StylesheetFlatt = () => (
+const StylesheetFlatten = () => (
   <View style={page.container}>
     <Text style={flattenStyle}>React Native</Text>
     <Text>Flatten Style</Text>
@@ -38,4 +38,4 @@ const typography = StyleSheet.create({
 
 const flattenStyle = StyleSheet.flatten([page.text, typography.header]);
 
-export default StylesheetFlatt;
+export default StylesheetFlatten;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const Stylesheet = () => (
+const StylesheetCompose = () => (
   <View style={container}>
     <Text style={text}>React Native</Text>
   </View>
@@ -9,7 +9,7 @@ const Stylesheet = () => (
 
 const page = StyleSheet.create({
   container: {
-    flex: 0,
+    flex: 20,
     padding: 24,
     backgroundColor: '#fff',
   },
@@ -33,4 +33,4 @@ const lists = StyleSheet.create({
 const container = StyleSheet.compose(page.container, lists.listContainer);
 const text = StyleSheet.compose(page.text, lists.listItem);
 
-export default Stylesheet;
+export default StylesheetCompose;

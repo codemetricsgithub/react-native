@@ -1,16 +1,9 @@
 import React from 'react';
-import Scrollviews from './src/pages/Scrollviews';
-import StylesheetCompose from './src/stylesheets/StylesheetCompose';
-import StylesheetFlatten from './src/stylesheets/StylesheetFlatten';
+import {View, Text} from 'react-native';
+import AllComponents from './src/index';
 
 const App = () => {
-  return (
-    <>
-      <Scrollviews />
-      <StylesheetCompose />
-      <StylesheetFlatten />
-    </>
-  );
+  return <AllComponents />;
 };
 
 export default App;
