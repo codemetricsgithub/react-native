@@ -5,7 +5,7 @@ import Absolutefill from './stylesheets/Absolutefill';
 import StylesheetCompose from './stylesheets/StylesheetCompose';
 import StylesheetFlatten from './stylesheets/StylesheetFlatten';
 import Absolutefillobj from './stylesheets/Absolutefillobj';
-import Hairlinewidth from './stylesheets/Hairlinewidth';
+import Buttonex from './buttons/Button';
 
 const index = () => {
   return (
@@ -14,8 +14,9 @@ const index = () => {
       <StylesheetFlatten />
       <StylesheetCompose />
       <Absolutefill /> */}
-      <Absolutefillobj />
-      <Hairlinewidth />
+      {/* <Absolutefillobj />
+      <Hairlinewidth /> */}
+      <Buttonex />
     </>
   );
 };
