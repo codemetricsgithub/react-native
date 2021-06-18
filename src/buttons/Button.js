@@ -18,6 +18,7 @@ const Buttonex = () => (
         accessibilityLabel to help make your app usable by everyone.
       </Text>
       <Button
+        touchSoundDisabled={true}
         title="Press me i am button"
         onPress={() => Alert.alert('Simple Button pressed')}
       />

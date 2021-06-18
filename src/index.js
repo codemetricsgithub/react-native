@@ -6,6 +6,8 @@ import StylesheetCompose from './stylesheets/StylesheetCompose';
 import StylesheetFlatten from './stylesheets/StylesheetFlatten';
 import Absolutefillobj from './stylesheets/Absolutefillobj';
 import Buttonex from './buttons/Button';
+import SwitchToggle from './switches/SwitchToggle';
+import Flatlist from './flatlist/Flatlist';
 
 const index = () => {
   return (
@@ -16,7 +18,9 @@ const index = () => {
       <Absolutefill /> */}
       {/* <Absolutefillobj />
       <Hairlinewidth /> */}
-      <Buttonex />
+      {/* <Buttonex />
+      <SwitchToggle /> */}
+      <Flatlist />
     </>
   );
 };
