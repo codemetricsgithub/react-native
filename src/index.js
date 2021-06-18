@@ -8,6 +8,8 @@ import Absolutefillobj from './stylesheets/Absolutefillobj';
 import Buttonex from './buttons/Button';
 import SwitchToggle from './switches/SwitchToggle';
 import Flatlist from './flatlist/Flatlist';
+import FlatlistSelectable from './flatlist/FlatlistSelectable';
+import SectionListView from './SectionList/SectionList';
 
 const index = () => {
   return (
@@ -20,7 +22,9 @@ const index = () => {
       <Hairlinewidth /> */}
       {/* <Buttonex />
       <SwitchToggle /> */}
-      <Flatlist />
+      {/* <Flatlist /> */}
+      {/* <FlatlistSelectable /> */}
+      <SectionListView />
     </>
   );
 };
